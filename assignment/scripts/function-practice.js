@@ -42,9 +42,9 @@ console.log(multiplyThree( 1, 1, 0 ));
 //    or greater than zero, and false otherwise
 function isPositive( number ) {
   if ( number > 0 ){
-    return;
+    return true;
   }
-    return;
+    return false;
 }
 // Call the function to test each outcome (true & false) 
 // Write a separate console.log statement for each outcome
@@ -56,15 +56,29 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 // 6. Function to return the _last_ item in an array. If the 
 //    array is empty, return `undefined`.
 function getLast( array ) {
-
+  return array[array.length-1];
 }
+let randomNumbers = ['1', '2', '3', '4', '5'];
+console.log(getLast( randomNumbers ));
+let randomFood = ['pizza', 'pho', 'eggrolls', 'steak'];
+console.log(getLast( randomFood ));
 
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 function find( value, array ){
-  
+  for ( i=0; i<array.length; i++){
+    if (value === array[i])
+    return true;
+  }
+    return false;
 }
+let sports = ['soccer', 'football', 'ultimateFrisbee', 'breakdancing', 'swimming'];
+let activity = 'breakdancing';
+let otherActivity = 'sleeping';
+console.log(sports[3]);
+console.log('it is ' + find( activity, sports) + ' that breakdancing is a sport');
+console.log('it is ' + find( otherActivity, sports) + ' that sleeping is a sport');
 
 // ----------------------
 // Stretch Goals
