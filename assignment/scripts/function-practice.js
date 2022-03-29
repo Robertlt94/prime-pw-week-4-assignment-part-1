@@ -86,23 +86,43 @@ console.log('it is ' + find( otherActivity, sports) + ' that sleeping is a sport
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
+  if (letter === string[0]) {
+    return true;
+  }
+    return false;
 }
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll( ) {
+function sumAll( array ) {
   let sum = 0
   // TODO: loop to add items
+  for (i=0; i<array.length; i++){
+    sum = sum + array[i]
+  }
   return sum;
 }
+numbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(sumAll(numbersArray));
+randomNumbers = [20, 50, 90];
+console.log(sumAll(randomNumbers));
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
-
-
+function returnPositivesOnly( array ) {
+  for (i=0; i<array.length;) {
+    let positiveNumbers = [];
+    if (array[i] > 0) {
+      positiveNumbers.push(array[i]);
+  } else {
+  }
+  return console.log(positiveNumbers);
+}
+}
+let positiveNegative = [-2, -5, 3, 0, 5, -1, 40];
+returnPositivesOnly( positiveNegative );
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
